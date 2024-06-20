@@ -1,6 +1,22 @@
 import math
-import matplotlib as plt
+import matplotlib.pyplot as plt
 import numpy as np
+
+def calcular_tiempo_vaciado(A, a, g, h0, h):
+    # A es el área de la sección transversal del tanque
+    # a es el área de la abertura en el fondo del tanque
+    # g es la aceleración debido a la gravedad
+    # h0 es la altura inicial del agua en el tanque
+    # h es la altura final del agua en el tanque
+
+    # Calculamos el coeficiente k
+    k = (2 * A) / (a * math.sqrt(2 * g))
+
+    # Calculamos el tiempo t usando la fórmula derivada
+    t = k * (math.sqrt(h0) - math.sqrt(h))
+
+    return t
+
 
 def calcular_nivel_agua(A, a, g, h0, t):
     # A es el área de la sección transversal del tanque
